@@ -8,6 +8,10 @@ $text-color: grey;
   padding: 0;
 }
 
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+
 $font-weights: (
   "regular": 400,
   "medium": 500,

@@ -1,4 +1,5 @@
 @import './config';
+@import './home.scss';
 
 // @function weight($weight-name) {
 //   @return map-get($font-weights, $weight-name );
@@ -59,6 +60,7 @@ main {
 
     a {
       padding: 0.4rem;
+      @include transition-ease;
       
       &:hover {
         color: $secondary-color;
