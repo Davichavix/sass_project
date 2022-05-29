@@ -82,12 +82,12 @@
       transform: translateY(0);
     }
 
-    &__item {
+    &_item {
       transform: translateX(100vw);
       @include transition-ease;
 
       &.open {
-       transform: translateX(0); 
+       transform: translateX(0);
       }
 
       &.active > a {
@@ -95,7 +95,7 @@
       }
     }
 
-    &__link {
+    &_link {
       display: inline-block;
       font-size: 2rem;
       text-transform: uppercase;
@@ -107,5 +107,11 @@
         color: $secondary-color;
       }
     }
+  }
+}
+
+@for $i from 1 through 4 {
+  .menu-nav_item:nth-child(#{$i}) {
+    transition-delay: ($i * 0.1s) + 0.15s;
   }
 }
