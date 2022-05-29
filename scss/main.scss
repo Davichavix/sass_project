@@ -1,5 +1,4 @@
-@import './resets';
-@import './variables';
+@import './config';
 
 @function weight($weight-name) {
   @return map-get($font-weights, $weight-name );
@@ -26,35 +25,61 @@
 }
 
 body {
-  background-color: $accent-color;
+  background-color: $primary-color;
+  color: #fff;
+  height: 100vh;
+  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  sans-serif;
+  line-height: 1;
 }
 
-.main {
-  @include flexCenter(row);
-  width: 80% - 40%;
-  margin: 0 auto;
-
-  #{&}_paragraph1 {
-    font-weight: weight(regular);
-
-    &:hover {
-      color: pink
-    }
-  }
-
-  #{&}_paragraph2 {
-    @extend .main_paragraph1;
-
-    &:hover {
-      color: $accent-color;
-    }
-  }
-
-  @include mobile{
-    flex-direction: column;
-  }
+h1, h2, h3 {
+  font-weight: 400;
 }
 
-.light {
-  @include theme($light-theme: light);
+a {
+  color: #fff;
+  text-decoration: none;
 }
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+// .main {
+//   @include flexCenter(row);
+//   width: 80% - 40%;
+//   margin: 0 auto;
+
+//   #{&}_paragraph1 {
+//     font-weight: weight(regular);
+
+//     &:hover {
+//       color: pink
+//     }
+//   }
+
+//   #{&}_paragraph2 {
+//     @extend .main_paragraph1;
+
+//     &:hover {
+//       color: $accent-color;
+//     }
+//   }
+
+//   @include mobile{
+//     flex-direction: column;
+//   }
+// }
+
+// .light {
+//   @include theme($light-theme: light);
+// }
