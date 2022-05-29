@@ -1,60 +1,110 @@
-@import './resets';
-@import './variables';
+@import './config';
+@import './home.scss';
 
-@function weight($weight-name) {
-  @return map-get($font-weights, $weight-name );
-}
+// @function weight($weight-name) {
+//   @return map-get($font-weights, $weight-name );
+// }
 
-@mixin flexCenter($direction) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $direction;
-}
+// @mixin flexCenter($direction) {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: $direction;
+// }
 
-@mixin theme($light-theme: true) {
-  @if $light-theme {
-    background: lighten($primary-color, 100%);
-    color: darken($text-color, 100%);
-  }
-}
+// @mixin theme($light-theme: true) {
+//   @if $light-theme {
+//     background: lighten($primary-color, 100%);
+//     color: darken($text-color, 100%);
+//   }
+// }
 
-@mixin mobile {
-  @media (max-width: $mobile) {
-    @content;
-  }
-}
+// @mixin mobile {
+//   @media (max-width: $mobile) {
+//     @content;
+//   }
+// }
 
 body {
-  background-color: $accent-color;
+  background-color: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100vh;
+  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1;
 }
 
-.main {
-  @include flexCenter(row);
-  width: 80% - 40%;
-  margin: 0 auto;
+h1, h2, h3 {
+  font-weight: 400;
+}
 
-  #{&}_paragraph1 {
-    font-weight: weight(regular);
+a {
+  color: #fff;
+  text-decoration: none;
+}
 
-    &:hover {
-      color: pink
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+
+  .social-icons {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+
+    a {
+      padding: 0.4rem;
+      @include transition-ease;
+      
+      &:hover {
+        color: $secondary-color;
+      }
     }
   }
-
-  #{&}_paragraph2 {
-    @extend .main_paragraph1;
-
-    &:hover {
-      color: $accent-color;
-    }
-  }
-
-  @include mobile{
-    flex-direction: column;
-  }
 }
 
-.light {
-  @include theme($light-theme: light);
+footer {
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0.4rem;
+  right: 1rem;
+  text-align: right;
+  padding: 1rem;
+  color: set-text-color($primary-color);
 }
+
+// .main {
+//   @include flexCenter(row);
+//   width: 80% - 40%;
+//   margin: 0 auto;
+
+//   #{&}_paragraph1 {
+//     font-weight: weight(regular);
+
+//     &:hover {
+//       color: pink
+//     }
+//   }
+
+//   #{&}_paragraph2 {
+//     @extend .main_paragraph1;
+
+//     &:hover {
+//       color: $accent-color;
+//     }
+//   }
+
+//   @include mobile{
+//     flex-direction: column;
+//   }
+// }
+
+// .light {
+//   @include theme($light-theme: light);
+// }
