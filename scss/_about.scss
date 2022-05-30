@@ -1,0 +1,20 @@
+.about {
+  padding-bottom: 2rem;
+
+  &_bio-image {
+    height: 50vh;
+    width: 100%;
+    background: 
+    linear-gradient(
+      to right,
+      rgba($primary-color, 0.0),
+      rgba($primary-color, 0.0)
+    ),
+    url('/src/images/background-img-1.jpeg') center top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

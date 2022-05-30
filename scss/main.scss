@@ -1,6 +1,7 @@
 @import './config';
 @import './_home.scss';
 @import "./_menu.scss";
+@import "./about.scss";
 
 // @function weight($weight-name) {
 //   @return map-get($font-weights, $weight-name );
@@ -36,6 +37,10 @@ body {
 
 h1, h2, h3 {
   font-weight: 400;
+}
+
+.text-secondary {
+  color: $secondary-color;
 }
 
 a {
