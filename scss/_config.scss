@@ -1,5 +1,5 @@
 $primary-color: black;
-$secondary-color: #ff6524;
+$secondary-color: #010101;
 $text-color: grey;
 
 * {
@@ -28,7 +28,7 @@ $text-color: grey;
   }
 }
 
-@mixin media-md {
+@mixin media-sm {
   @media screen and (min-width: 768px) {
     @content;
   }
@@ -40,7 +40,7 @@ $text-color: grey;
   }
 }
 
-@mixin media-md {
+@mixin media-lg {
   @media screen and (min-width: 1600px) {
     @content;
   }
