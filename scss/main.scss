@@ -1,8 +1,9 @@
-@import './config';
+@import './_config';
 @import './_home.scss';
 @import "./_menu.scss";
 @import "./about.scss";
 @import "./projects.scss";
+@import "./responsive.scss";
 
 // @function weight($weight-name) {
 //   @return map-get($font-weights, $weight-name );
